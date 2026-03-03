@@ -1,10 +1,14 @@
-class Solution {
+class Solution {
 public:
-    int countBinarySubstrings(string s) {
-        int ans = 0;
-        int prev = 0, curr = 1;
-        
-        for(int i=1;i<s.length();i++){
-            if(s[i] == s[i-1])
-            curr++;
+    char findKthBit(int n, int k) {
+        if(n==1)
+        return '0';
 
+        int len =(1<<n) -1; //2^n - 1
+        int mid = len/2 + 1;
+
+        if(k == mid)
+        return '1';
+
+        else if(k<mid)
+        return findKthBit(n-1,k);
