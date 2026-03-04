@@ -1,14 +1,14 @@
 class Solution {
 public:
-    char findKthBit(int n, int k) {
-        if(n==1)
-        return '0';
+    int numSpecial(vector<vector<int>>& mat) {
+        int m = mat.size();
+        int n = mat[0].size();
+        vector<int> row(m,0), col(n,0);
 
-        int len =(1<<n) -1; //2^n - 1
-        int mid = len/2 + 1;
+            for(int i=0;i<m;i++)
+                for(int j=0;j<n;j++)
+                    if(mat[i][j]==1){
+                        row[i]++;
+                        col[j]++;
+                    }
 
-        if(k == mid)
-        return '1';
-
-        else if(k<mid)
-        return findKthBit(n-1,k);
