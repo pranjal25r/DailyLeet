@@ -1,6 +1,1 @@
-class Solution {
-public:
-    int bitwiseComplement(int n) {
-        
-    }
-};
+c
