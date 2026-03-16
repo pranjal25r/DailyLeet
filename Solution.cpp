@@ -1,14 +1,14 @@
 class Solution {
 public:
-    int numSpecial(vector<vector<int>>& mat) {
-        int m = mat.size();
-        int n = mat[0].size();
-        vector<int> row(m,0), col(n,0);
+    vector<int> getBiggestThree(vector<vector<int>>& grid) {
+        int m = grid.size();
+        int n = grid[0].size();
 
-            for(int i=0;i<m;i++)
-                for(int j=0;j<n;j++)
-                    if(mat[i][j]==1){
-                        row[i]++;
-                        col[j]++;
-                    }
+        set<int> sums;
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+
+                // size 0 rhombus (single cell)
+                sums.insert(grid[i][j]);
 
